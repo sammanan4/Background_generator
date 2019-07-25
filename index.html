@@ -2,54 +2,7 @@
 <html>
 <head>
 	<title>Color Gradients</title>
-	<style type="text/css">
-		body{
-			background-image: linear-gradient(to right, black, white);
-		}
-		#in{
-			position: relative;
-			width: 20%;
-			margin: auto;
-			top: 70px;
-			/*transform: translate(-50%, -50%);*/
-		}
-		input{
-			display: inline;
-		}
-		
-		@media screen and (-webkit-min-device-pixel-ratio:0) {
-		    input[type='range'] {
-		      overflow: hidden;
-		      /*width: 80px;*/
-		      -webkit-appearance: none;
-		      /*background-color: black;*/
-		    }
-		    
-		    input[type='range']::-webkit-slider-runnable-track {
-		      height: 10px;
-		      -webkit-appearance: none;
-		      color: #13bba4;
-		      margin-top: -1px;
-		    }
-		    
-		    input[type='range']::-webkit-slider-thumb {
-		      width: 10px;
-		      /*-webkit-appearance: none;*/
-		      height: 10px;
-		      cursor: ew-resize;
-		      /*background: #434343;*/
-		      box-shadow: -80px 0 0 80px #43e5f7;
-		    }
-
-		    .red{ background-color: red; }
-		    /*.red::-webkit-slider-runnable-track{ color: #13bba4; }*/
-		    .green{ background-color: green; }
-		    /*.green::-webkit-slider-runnable-track{ color: #13bba4; }*/
-		    .blue{ background-color: blue; }
-		    /*.blue::-webkit-slider-runnable-track{ color: #13bba4; }*/
-		}
-
-	</style>
+	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 	<h1 align="center"><font face="Verdana">Change Gradients</font></h1>
@@ -63,23 +16,6 @@
 		<!-- <input type="color" class="color" value=#000000> -->
 		<!-- <input type="color" class="color" value=#FFFFFF> -->
 	</div>
+	<script type="text/javascript" src="script.js"></script>
 </body>
-	<script type="text/javascript">
-		var red = document.getElementsByClassName('red');
-		var green = document.getElementsByClassName('green');
-		var blue = document.getElementsByClassName('blue');
-		var doc = document.getElementsByTagName('body')[0];
-		function gradientChange(){
-			// console.log(col.value);
-			var leftCol = "rgb(" + red[0].value + "," + green[0].value + "," + blue[0].value + ")";
-			var rightCol = "rgb(" + red[1].value + "," + green[1].value + "," + blue[1].value + ")";
-			doc.style.backgroundImage = 'linear-gradient(to right,' + leftCol + "," + rightCol + ")";
-		}
-		red[0].addEventListener('input',gradientChange);
-		red[1].addEventListener('input',gradientChange);
-		green[0].addEventListener('input',gradientChange);
-		green[1].addEventListener('input',gradientChange);
-		blue[0].addEventListener('input',gradientChange);
-		blue[1].addEventListener('input',gradientChange);
-	</script>
 </html>
